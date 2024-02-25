@@ -57,3 +57,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+
+const customMenu = document.getElementById('customMenu');
+
+// Handle right-click event
+document.addEventListener('contextmenu', (event) => {
+  event.preventDefault(); // Prevent default browser context menu
+
+  // Show custom context menu at the mouse position
+  customMenu.style.left = event.pageX + 'px';
+  customMenu.style.top = event.pageY + 'px';
+  customMenu.style.display = 'flex';
+});
+
+// Hide custom context menu when clicking elsewhere on the document
+document.addEventListener('click', () => {
+  customMenu.style.display = 'none';
+});
+
+// Handle custom action when the button is clicked
+function customAction() {
+  alert('Custom action triggered!');
+  customMenu.style.display = 'none'; // Hide the context menu
+}
