@@ -586,6 +586,7 @@ vertical-align: middle;
   width: 28vw;
   transform: scaleX(-1);
   object-fit: cover;
+  z-index:-1;
 }
 /* end about-page */
 
