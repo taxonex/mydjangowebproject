@@ -12,8 +12,14 @@
     width: 100%;
     height: 100%;
     background-color: #f6f8ff;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
-  
+body img{
+    pointer-events: none;
+  }
   #user-main{
     width: 100%;
     position: relative;
