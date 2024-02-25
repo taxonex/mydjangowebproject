@@ -118,7 +118,37 @@ html,body{
   font-size: 14px;
 }
 /* end intropage */
-
+  #customMenu {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      flex-direction:column;
+      border: 1px solid #d4d4d4;
+      width: 120px;
+      height: 200px;
+      padding: 8px;
+      z-index: 1999;
+    }
+    #customMenu p{
+      text-align: left;
+      font-size: 12px;
+      font-weight: bold;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    #customMenu  a{
+      text-decoration: none;
+      color: black;
+      padding: 5px;
+      font-size: 14px;
+    }
+    #customMenu a:hover{
+      background-color: #d8d8d8;
+      color: rgb(70, 70, 70);
+      border-bottom: 1px solid rgb(49, 49, 49);
+    }
 /* cards */
 #cardparent{
   width: 100%;
