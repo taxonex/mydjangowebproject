@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  *::selection{
+    background-color: #000;
+    color: white;
+  }
+  html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #f6f8ff;
+  }
+  
+  #user-main{
+    width: 100%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #user-main-container{
+    display: flex;
+    background-image: url('/notex/static/images/new.jpg');
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }

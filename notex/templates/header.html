@@ -1,0 +1,22 @@
+{% load static %}
+
+<div id="bottom">
+    <div id="inih">
+        <h2><i>myweb</i></h2>
+        <img src="{% static '/images/x.svg' %}" alt=""width="100px">
+        <h2><i>Notex</i></h2>
+    </div>
+    <div id="botform">
+        <form method="post" action="/contact">
+            {% csrf_token %}
+        <input type="text" id="inputname" name="inputname" class="forminp" placeholder="Enter Your Name." required>
+        <input type="email" id="inputemail" name="inputemail" class="forminp" placeholder="Enter Your E-mail-abc@--.com"required><br>
+        <textarea cols="18" rows="3" type="text" name="feedback" id="feedback" class="forminp" placeholder="Enter Your Feedback OR Meggages" required></textarea><br>
+        <button id="botformsub" type="submit">submit</button>
+        </form>
+    </div><br>
+    <div id="sitename">
+        <div style="width:100%;height:1px;background-color:#000;margin-top:25px"></div>
+        <p id="dis"><b>Disclaimer:</b> Termly Inc is not a lawyer or a law firm and does not engage in the practice of law or provide legal advice or legal representation. All information, software, services, and comments provided on the site are for informational and self-help purposes only and are not intended to be a substitute for professional legal advice. Use of this site is subject to our Terms of Use.</p>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{% load static %}
+
+<div id="navBar">
+    <div id="navLeftp">
+        <img src="{% static '/images/myweb.png' %}"></img>
+    </div>
+    <div id="navRightp">
+        <div id="manu" class"manu">
+            <span>
+            <a href="/"><p>Home</p></a>
+            <a href="/about"><p>About</p></a>
+            <a href="/contact"><p>Contact</p></a>
+            <a href="https://nonexr.blogspot.com"><p>NoneXR</p></a>
+            </span>
+        </div>
+        <div id="for-user">
+            <span onclick="displog()">
+                <i class="fa-solid fa-user"></i>
+                <span id="sign" >
+                    <a href="/login"><button>Login</button></a><br>
+                    <a href="/sign"><button>sign</button></a>
+                </span>
+            </span>
+        </div>
+        <button class="menu-btn"id="menu-btn">
+            <img src="{% static '/images/list.svg' %}" alt="" class="menu-icon">
+            <img src="{% static '/images/x.svg' %}" alt="" class="close-icon" style="filter: invert(12%) sepia(19%) saturate(2463%) hue-rotate(157deg) brightness(99%) contrast(97%);">
+        </button> 
+    </div>
+</div>
+
+

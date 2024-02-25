@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% load static %}
+    {% block about %}
+    <div id="about-container">
+        <div id="about-head">
+            <h1>Portfolio</h1>
+            <span id="about-headin">
+                <a href="/"><p>Home</p></a>
+                <a href="/about"><p>About</p></a>
+                <a href=""><p>Skills</p></a>
+                <a href="/contact"><p>Contact</p></a>
+            </span>
+            <div id="about-social-media">
+                <span><a href=""><i class="fa-brands fa-facebook"></a></i></span>
+                <span><a href=""><i class="fa-brands fa-instagram"></a></i></span>
+                <span><a href=""><i class="fa-brands fa-twitter"></a></i></span>
+            </div>
+        </div>
+        <div id="about-intro">
+            <div id="about-me">
+                <span>
+                <p>Hello,</p>
+                <h1>I'M Rohit Sahni<h1>
+                <h2>Web-Developer</h2>
+                <p>From India(Delhi)</p>
+                <a href="/contact"><button>Hire Me</button></a>
+                </span>
+            </div>
+            <div id="about-img">
+                <img src="{% static '/images/formal.png' %}">
+            </div>
+        </div>
+    </div>
+    {% endblock %}

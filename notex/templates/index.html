@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static '/style.css' %}">
+        <script src="https://unpkg.com/phosphor-icons"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        {% if request.path == '/login/' or request.path == '/sign/' %}
+        <style>
+        body {
+         overflow: hidden;
+        }
+        </style>
+        {% endif %}
+    </head>
+<body id="body">
+    {% if request.path == '/contact/' %}
+        {% block contact %}
+        {% endblock %}
+    {% elif request.path == '/about/' %}
+        {% block about %}
+        {% endblock %}
+    {% else %}
+        {% if request.path == '/login/' %}
+            {% block login %}
+            {% endblock %}
+        {% elif request.path == '/sign/' %}
+            {% block sign %}
+            {% endblock %}
+        {% endif %}
+        {% include 'banner.html' %}
+        {% include 'intro.html' %}
+        {% include 'cards.html' %}
+        {% include 'middle.html' %}
+        {% include 'parapage.html' %}
+        {% include 'header.html' %}
+    {% endif %}
+    
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+</body>
+</html>
+

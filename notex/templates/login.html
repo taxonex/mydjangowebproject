@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+    {% block login %}
+    <div id="login-form-container">
+        <div id="login-form">
+            <div id="login-formin">
+                <a href="/"><button onclick="document.getElementById('body').style.overflow='auto'" class="form-close"><img src="{% static '/images/x.svg' %}" alt=""></button></a>
+                <div id="logformimg"><img src="{% static '/images/unkown.jpg' %}" alt=""></div>
+                <br><br>
+                <div id="loginputprnt">
+                <form method="post" action="/logined">
+                    {% csrf_token %}
+                <input type="email" name="logusername" class="loginput" id="logusername" placeholder="Enter User-email"><br>
+                <input type="password" name="logpassw" class="loginput" id="logpassw" placeholder="Enter Password"><br>
+                <button id="login" class="login">Login</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

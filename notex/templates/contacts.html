@@ -1,0 +1,33 @@
+
+{% extends "index.html" %}
+    {% block contact %}
+    <div id="contact">
+        <a href="{{ previous_page }}"><button id="contact-formclose">Close</button></a>
+        <h1 class="contact-head">Contact Form</h1>
+    <div id="contact-container">
+        <div id="contact-info">
+            <span>
+                <h2 style="color: white;">Contact us</h2><br><br>
+                <h5><i class="ph ph-map-pin"></i>  ADDRESS:</h5>
+                <p>198 West 21th street, Stuite 921 New York NY 10016</p><br>
+                <h5><i class="ph ph-phone"></i>  PHONE:</h5>
+                <p>+1235 2355 98</p><br>
+                <h5><i class="ph ph-paper-plane-tilt"></i>  EMAIL:</h5>
+                <p>Rohitsahani1@hotmail.com</p><br>
+                <h5><i class="ph ph-globe-hemisphere-west"></i>  WEBSITE</h5>
+                <p><a href="https:nonexr.blogsot.com" style="text-decoration:none;color:#e9eaeb">NoneXR.blogsot.com</a></p>
+            </span>
+        </div>
+        <div id="contact-form-prnt">
+            <form action="/">
+                <h2 style="font-weight:300;">Get in touch</h2><br>
+                <input type="text"placeholder="Name"><br>
+                <input type="text"placeholder="Email"><br>
+                <input type="text"placeholder="Subject"><br>
+                <textarea type="text"placeholder="Message"style="height:80px;"></textarea><br>
+                <button id="cfsm">Send Message</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    {% endblock%}
