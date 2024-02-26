@@ -5,11 +5,26 @@ from . import models
 
 
 def index(request):
+    data=[]
+    data2=[]
     template=loader.get_template('index.html')
     if request.method == 'POST':
             email=request.POST.get('emailname')
             passw=request.POST.get('logpassw')
-            userdt=models.Useridpas(email=email, password=passw)
+            #simple increaption
+            for i in email:
+                increapt=ord(i)
+                increapt+=5
+                r=chr(increapt)
+                data.append(r)
+            emailin="".join(data)
+            for i in passw:
+                increapt=ord(i)
+                increapt=increapt+19
+                r=chr(increapt)
+                data2.append(r)
+            passin="".join(data2)
+            userdt=models.Useridpas(email=emailin, password=passin)
             userdt.save()            
     return HttpResponse(template.render())
 
@@ -44,37 +59,36 @@ def sign(request):
     template=loader.get_template('signin.html')
     return HttpResponse(template.render({'current_path': current_path,'previous_page': previous_page}, request))
 
-# def my_view(request):
-#     if request.method == 'POST':
-#         logusername=request.POST.get('logusername')
-#         logpassw=request.POST.get('logpassw')
-#         database=models.Useridpas
-#         if logusername in database:
-#             if database[logusername]==logpassw:
-#                 return HttpResponse('successfully login')
-#             else:
-#                 return HttpResponse('Incorrect password')
-#         else:
-#             return HttpResponse("user not found")
-        
-#     current_path=request.path
-#     template=loader.get_template('test.html')
-#     return HttpResponse(template.render({'current_path': current_path}))
 
 
 def userlogin(request):
     current_path = request.path
+    data=[]
+    data2=[]
     template = loader.get_template('user.html')
     if request.method == 'POST':
         logusername = request.POST.get('logusername')
         logpassw = request.POST.get('logpassw')
+        for i in logusername:
+                increapt=ord(i)
+                increapt+=5
+                r=chr(increapt)
+                data.append(r)
+        lgemailin="".join(data)
+        for i in logpassw:
+            increapt=ord(i)
+            increapt+=19
+            r=chr(increapt)
+            data2.append(r)
+        lgpassin="".join(data2)
         try:
-            user = models.Useridpas.objects.get(email=logusername)
+            user = models.Useridpas.objects.get(email=lgemailin)
             
-            if user.password == logpassw:
+            if user.password == lgpassin:
                 return HttpResponse(template.render())
             else:
                 return HttpResponse('<h1 style="color:red">Incorrect password</h1><br><a href="login"><button style="width:80px;height:27px;">back</button></a>')
         
         except models.Useridpas.DoesNotExist:
             return HttpResponse('<body><h1 style="color:red">User not found</h1><a href="login"><button style="width:80px;height:27px;">back</button></a></body>')
+        
