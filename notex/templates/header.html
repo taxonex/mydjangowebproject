@@ -7,7 +7,7 @@
         <h2><i>Notex</i></h2>
     </div>
     <div id="botform">
-        <form method="post" action="/contact">
+        <form method="get" action="/">
             {% csrf_token %}
         <input type="text" id="inputname" name="inputname" class="forminp" placeholder="Enter Your Name." required>
         <input type="email" id="inputemail" name="inputemail" class="forminp" placeholder="Enter Your E-mail-abc@--.com"required><br>
