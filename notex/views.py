@@ -25,7 +25,18 @@ def index(request):
                 data2.append(r)
             passin="".join(data2)
             userdt=models.Useridpas(email=emailin, password=passin)
-            userdt.save()            
+            userdt.save()
+    elif request.method == 'GET':
+        try:
+            username=request.GET.get('inputname')
+            useremail=request.GET.get('inputemail')
+            feedback=request.GET.get('feedback')
+            user_feedback=models.feedback(name=username,email=useremail,feedback=feedback)   
+            user_feedback.save()
+        # except models.feedback.DoesNotExist:
+        except Exception as e:
+            # return HttpResponse('<body><h1 style="color:red">Error</h1><a href="login"><button style="width:80px;height:27px;">back</button></a></body>')                
+            return HttpResponse(template.render()) 
     return HttpResponse(template.render())
 
 
