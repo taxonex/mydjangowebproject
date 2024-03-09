@@ -32,7 +32,13 @@ class feedback(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=300)
     feedback = models.CharField(max_length=5000)
-
+    
+class message(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=300)
+    subject = models.CharField(max_length=1000)
+    massege = models.CharField(max_length=5000)
+    
 
     
     
