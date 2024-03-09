@@ -19,12 +19,13 @@
             </span>
         </div>
         <div id="contact-form-prnt">
-            <form action="/">
+            <form method="post" action="/contactSend">
                 <h2 style="font-weight:300;">Get in touch</h2><br>
-                <input type="text"placeholder="Name"><br>
-                <input type="text"placeholder="Email"><br>
-                <input type="text"placeholder="Subject"><br>
-                <textarea type="text"placeholder="Message"style="height:80px;"></textarea><br>
+                {% csrf_token %}
+                <input type="text"placeholder="Name" name="namec" id="namec"><br>
+                <input type="text"placeholder="Email" name="emailc" id="emailc"><br>
+                <input type="text"placeholder="Subject" name="subc" id="subc"><br>
+                <textarea type="text"placeholder="Message" name="mesc" id="mesc" style="height:80px;"></textarea><br>
                 <button id="cfsm">Send Message</button>
             </form>
         </div>
