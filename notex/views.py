@@ -102,4 +102,20 @@ def userlogin(request):
         
         except models.Useridpas.DoesNotExist:
             return HttpResponse('<body><h1 style="color:red">User not found</h1><a href="login"><button style="width:80px;height:27px;">back</button></a></body>')
-        
+
+
+def contactSend(request):
+    template=loader.get_template('index.html')
+    if request.method == 'POST':
+        try:
+            name=request.POST.get('namec')
+            email=request.POST.get('emailc')
+            subject=request.POST.get('subc')
+            message=request.POST.get('mesc')
+            user_message=models.message(name=name,email=email,subject=subject,massege=message)   
+            user_message.save()
+            return HttpResponse(template.render())
+        except Exception as e:
+             return HttpResponse('<body><h1 style="color:red">Error</h1><a href="login"><button style="width:80px;height:27px;">back</button></a></body>')                
+             
+
